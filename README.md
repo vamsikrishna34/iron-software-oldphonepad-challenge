@@ -1,17 +1,18 @@
 # Iron Software – C# Coding Challenge: OldPhonePad
 
-This repository contains my solution to the **OldPhonePad** coding challenge for the **AI Software Engineer (Junior)** role at Iron Software.
+This is my solution to the OldPhonePad coding challenge for the AI Software Engineer (Junior) role at Iron Software.
 
-## Problem Overview
+## What It Does
 
-Simulate text input from an old mobile phone keypad using multi-tap logic:
+This code simulates how old mobile phones used to work: you’d press number keys multiple times to type letters. For example:
+- Pressing `2` once = `'A'`, twice = `'B'`, three times = `'C'`
+- To type `"CA"`, you’d press `"222 2"` — the space acts as a pause so it doesn’t become `"2222"` → `'A'`
 
-- Digits `2`–`9` map to letters (e.g., `2` → A, B, C).
-- Repeated presses cycle through letters: `"222"` → `'C'`.
-- A **space** separates sequences on the same key: `"222 2"` → `"CA"`.
-- `*` acts as **backspace** (deletes the last character).
-- `#` is the **send key** — processing stops immediately at the first `#`.
-- Input **always ends with `#`** (as per spec).
+The method also supports:
+- `*` → deletes the last character (backspace)
+- `#` → ends input immediately (everything after is ignored)
+
+As stated in the challenge, every input ends with `#`.
 
 ## Examples
 
@@ -22,28 +23,32 @@ Simulate text input from an old mobile phone keypad using multi-tap logic:
 | `"4433555 555666#"` | `"HELLO"` |
 | `"8 88777444666*664#"` | `"TVRING"` |
 
-> **Note**: The last example was computed as:
-> - `"8"` → T  
-> - `"88"` → V  
-> - `"777"` → R  
-> - `"444"` → I  
-> - `"666"` → O → `"TVRIO"`  
-> - `*` → delete → `"TVRI"`  
-> - `"66"` → N  
-> - `"4"` → G  
-> → Final: **`"TVRING"`**
+I worked through the last one manually to make sure it’s right:
+- `"8"` → T  
+- `"88"` → V  
+- `"777"` → R  
+- `"444"` → I  
+- `"666"` → O → so far: `"TVRIO"`  
+- `*` → delete last → `"TVRI"`  
+- `"66"` → N  
+- `"4"` → G  
 
-##  How to Run
+Final result: `"TVRING"`
 
-This project uses **.NET 6+** and **xUnit** for testing.
+## How It Works
 
-### Prerequisites
-- [.NET 6 SDK or higher](https://dotnet.microsoft.com/download)
+I process the input one character at a time:
+- Keep track of which number is being pressed and how many times
+- When the key changes (or we hit a space), convert the current sequence to a letter
+- `*` removes the last character from the result
+- Stop as soon as we see `#`
 
-### Build & Test
+I used `StringBuilder` for efficiency since we’re building a string step by step.
+
+## How to Run
+
+You’ll need the [.NET SDK](https://dotnet.microsoft.com/download) (6 or higher).
+
+From the project root:
 ```bash
-# Navigate to the repo root
-cd iron-software-oldphonepad-challenge
-
-# Run all tests
 dotnet test
