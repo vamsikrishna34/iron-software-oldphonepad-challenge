@@ -3,8 +3,7 @@ using System.Text;
 
 namespace IronSoftware.CodingChallenge
 {
-   
-    public static class OldPhonePadDecoder
+    public static class OldPhonePadSolver
     {
         
         public static string OldPhonePad(string input)
@@ -23,16 +22,21 @@ namespace IronSoftware.CodingChallenge
 
                 if (c == ' ')
                 {
+                    // Commit current sequence on space
                     AddChar(output, current, count);
                     current = '\0';
                     count = 0;
                 }
                 else if (c == '*')
                 {
-                    if (output.Length > 0)
-                        output.Length--;
+                    // Commit any pending key before backspacing
+                    AddChar(output, current, count);
                     current = '\0';
                     count = 0;
+
+                    // Now delete last character from output
+                    if (output.Length > 0)
+                        output.Length--;
                 }
                 else if (c >= '2' && c <= '9')
                 {
@@ -42,17 +46,21 @@ namespace IronSoftware.CodingChallenge
                     }
                     else
                     {
+                        // Commit previous key sequence
                         AddChar(output, current, count);
                         current = c;
                         count = 1;
                     }
                 }
+                // Ignore unsupported characters (e.g., '0', '1')
             }
 
+            // Commit any final pending sequence
             AddChar(output, current, count);
             return output.ToString();
         }
 
+        
         static void AddChar(StringBuilder sb, char key, int presses)
         {
             if (key == '\0' || presses == 0) return;

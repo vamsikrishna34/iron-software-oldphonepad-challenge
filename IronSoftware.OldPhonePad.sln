@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{B8EFCA5F-814F-285C-A8CB-F00F14650265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldPhonePad", "OldPhonePad", "{5C0A3DDF-D1A2-5EA6-A5A4-44D71A116912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldPhonePadChallenge", "Source\OldPhonePad\OldPhonePadChallenge.csproj", "{FA488040-D975-4476-900A-9E114293179B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OldPhonePadChallenge.tests", "OldPhonePadChallenge.tests", "{2DE48F79-1D6F-D22F-2D68-2609F7BF4B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldPhonePadChallenge.Tests", "Tests\OldPhonePadChallenge.tests\OldPhonePadChallenge.Tests.csproj", "{46A9129C-F08F-4F1D-AED8-B501D33741FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|x64.Build.0 = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Debug|x86.Build.0 = Debug|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|x64.ActiveCfg = Release|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|x64.Build.0 = Release|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|x86.ActiveCfg = Release|Any CPU
+		{FA488040-D975-4476-900A-9E114293179B}.Release|x86.Build.0 = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|x64.Build.0 = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|x64.ActiveCfg = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|x64.Build.0 = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C0A3DDF-D1A2-5EA6-A5A4-44D71A116912} = {B8EFCA5F-814F-285C-A8CB-F00F14650265}
+		{FA488040-D975-4476-900A-9E114293179B} = {5C0A3DDF-D1A2-5EA6-A5A4-44D71A116912}
+		{2DE48F79-1D6F-D22F-2D68-2609F7BF4B9C} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{46A9129C-F08F-4F1D-AED8-B501D33741FF} = {2DE48F79-1D6F-D22F-2D68-2609F7BF4B9C}
+	EndGlobalSection
+EndGlobal

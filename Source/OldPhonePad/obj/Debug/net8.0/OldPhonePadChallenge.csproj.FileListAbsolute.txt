@@ -3,3 +3,10 @@
 /Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/OldPhonePadChallenge.AssemblyInfo.cs
 /Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/OldPhonePadChallenge.csproj.CoreCompileInputs.cache
 /Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/OldPhonePadChallenge.sourcelink.json
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/bin/Debug/net8.0/OldPhonePadChallenge.deps.json
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/bin/Debug/net8.0/OldPhonePadChallenge.dll
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/bin/Debug/net8.0/OldPhonePadChallenge.pdb
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/OldPhonePadChallenge.dll
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/refint/OldPhonePadChallenge.dll
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/OldPhonePadChallenge.pdb
+/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/obj/Debug/net8.0/ref/OldPhonePadChallenge.dll
