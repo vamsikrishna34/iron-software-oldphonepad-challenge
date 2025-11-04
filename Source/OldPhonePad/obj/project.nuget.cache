@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "W4t8RLV0O9A=",
+  "success": true,
+  "projectFilePath": "/Users/vamsikrishna/Documents/GitHub/iron-software-oldphonepad-challenge/Source/OldPhonePad/OldPhonePadChallenge.csproj",
+  "expectedPackageFiles": [
+    "/Users/vamsikrishna/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/Users/vamsikrishna/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

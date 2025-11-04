@@ -1,79 +1,79 @@
+using System;
 using System.Text;
 
-public class OldPhonePad
+namespace IronSoftware.CodingChallenge
 {
-    // Converts old phone keypresses like "4433555 555666#" into "HELLO"
-    public static string OldPhonePad(string input)
+   
+    public static class OldPhonePadDecoder
     {
-        if (input == null) return ""; // simple null guard
-
-        var output = new StringBuilder();
-        char current = '\0';
-        int count = 0;
-
-        foreach (char c in input)
+        
+        public static string OldPhonePad(string input)
         {
-            if (c == '#')
-                break; // stop immediately
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            if (c == ' ')
+            var output = new StringBuilder();
+            char current = '\0';
+            int count = 0;
+
+            foreach (char c in input)
             {
-                // space ends the current key sequence
-                AddChar(output, current, count);
-                current = '\0';
-                count = 0;
-            }
-            else if (c == '*')
-            {
-                // backspace: remove last char
-                if (output.Length > 0)
-                    output.Length--;
-                current = '\0';
-                count = 0;
-            }
-            else if (c >= '2' && c <= '9')
-            {
-                if (c == current)
+                if (c == '#')
+                    break;
+
+                if (c == ' ')
                 {
-                    count++;
-                }
-                else
-                {
-                    // finish previous key
                     AddChar(output, current, count);
-                    current = c;
-                    count = 1;
+                    current = '\0';
+                    count = 0;
+                }
+                else if (c == '*')
+                {
+                    if (output.Length > 0)
+                        output.Length--;
+                    current = '\0';
+                    count = 0;
+                }
+                else if (c >= '2' && c <= '9')
+                {
+                    if (c == current)
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        AddChar(output, current, count);
+                        current = c;
+                        count = 1;
+                    }
                 }
             }
+
+            AddChar(output, current, count);
+            return output.ToString();
         }
 
-        // handle last sequence
-        AddChar(output, current, count);
-        return output.ToString();
-    }
-
-    // helper: turn key + press count into letter
-    static void AddChar(StringBuilder sb, char key, int presses)
-    {
-        if (key == '\0' || presses == 0) return;
-
-        string letters = "";
-        switch (key)
+        static void AddChar(StringBuilder sb, char key, int presses)
         {
-            case '2': letters = "ABC"; break;
-            case '3': letters = "DEF"; break;
-            case '4': letters = "GHI"; break;
-            case '5': letters = "JKL"; break;
-            case '6': letters = "MNO"; break;
-            case '7': letters = "PQRS"; break;
-            case '8': letters = "TUV"; break;
-            case '9': letters = "WXYZ"; break;
-        }
+            if (key == '\0' || presses == 0) return;
 
-        if (letters != "")
-        {
-            // cycle with modulo (e.g. 4 presses on '2' → 'A')
-            sb.Append(letters[(presses - 1) % letters.Length]);
+            string letters = key switch
+            {
+                '2' => "ABC",
+                '3' => "DEF",
+                '4' => "GHI",
+                '5' => "JKL",
+                '6' => "MNO",
+                '7' => "PQRS",
+                '8' => "TUV",
+                '9' => "WXYZ",
+                _ => ""
+            };
+
+            if (!string.IsNullOrEmpty(letters))
+            {
+                sb.Append(letters[(presses - 1) % letters.Length]);
+            }
         }
     }
 }
