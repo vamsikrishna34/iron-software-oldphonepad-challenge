@@ -21,26 +21,25 @@ As stated in the challenge, every input ends with `#`.
 | `"33#"` | `"E"` |
 | `"227*#"` | `"B"` |
 | `"4433555 555666#"` | `"HELLO"` |
-| `"8 88777444666*664#"` | `"TVRING"` |
+| `"8 88777444666*664#"` | `"TURING"` |
 
-I worked through the last one manually to make sure it’s right:
+I worked through the last one manually:
 - `"8"` → T  
-- `"88"` → V  
+- `"88"` → U  *(2 presses on "TUV")*  
 - `"777"` → R  
 - `"444"` → I  
-- `"666"` → O → so far: `"TVRIO"`  
-- `*` → delete last → `"TVRI"`  
+- `"666"` → O → so far: `"TURIO"`  
+- `*` → delete last → `"TURI"`  
 - `"66"` → N  
 - `"4"` → G  
-
-Final result: `"TVRING"`
+Final result: **`"TURING"`**
 
 ## How It Works
 
 I process the input one character at a time:
 - Keep track of which number is being pressed and how many times
 - When the key changes (or we hit a space), convert the current sequence to a letter
-- `*` removes the last character from the result
+- `*` removes the last character from the result — but first commits any pending key press
 - Stop as soon as we see `#`
 
 I used `StringBuilder` for efficiency since we’re building a string step by step.
